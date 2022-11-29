@@ -32,12 +32,16 @@ namespace zadania_8._4
             string NieParzyste = "";
             string PodzielnePrzezTrzy = "";
             string Przedzial = "";
+            string SumaCyfr = "";
+
+
             for (int i = 0; i <= n; i++)
             {
+                int Suma = 0;
                 if (i % 2 == 0)
                 {
-                    Parzyste += i  + ", ";
-                   
+                    Parzyste += i + ", ";
+
                 }
                 else
                 {
@@ -45,21 +49,46 @@ namespace zadania_8._4
                 }
                 if (i % 3 == 0)
                 {
-                    PodzielnePrzezTrzy += i + ", ";              
+                    PodzielnePrzezTrzy += i + ", ";
                 }
-                if (i >= 4 && i <15)
+                if (i >= 4 && i < 15)
                 {
                     Przedzial += i + ", ";
                 }
+                int a = i;
+                while (a > 0)
+                {
+                    Suma += a % 10;
+                    a /= 10;
+
+
+                }
+                if (Suma == 1)
+                {
+                    SumaCyfr += i + ", ";
+
+                }
+                //if (i % 10 == 0)
+                //{
+                //    //i /= 10;
+                //    if (i == 1)
+                //    {
+                //        SumaCyfr += i;
+                //    }
+                //}
+
+
             }
-            Console.WriteLine("Liczby parzyste:");
-            Console.WriteLine(Parzyste);
-            Console.WriteLine("Liczby nieparzyste:");
-            Console.WriteLine(NieParzyste);
-            Console.WriteLine("Liczby, które dzielą się przez 3");
-            Console.WriteLine(PodzielnePrzezTrzy);
-            Console.WriteLine("Liczby z przedziału [4;15)");
-            Console.WriteLine(Przedzial);
+            Console.WriteLine("Liczby parzyste:\n");
+            Console.WriteLine($"{Parzyste}\n\n");
+            Console.WriteLine("Liczby nieparzyste:\n");
+            Console.WriteLine($"{NieParzyste}\n\n");
+            Console.WriteLine("Liczby, które dzielą się przez 3:\n");
+            Console.WriteLine($"{PodzielnePrzezTrzy}\n\n");
+            Console.WriteLine("Liczby z przedziału [4;15):\n");
+            Console.WriteLine($"{Przedzial}\n\n");
+            Console.WriteLine("Liczby, których suma cyfr wynosi 1:\n");
+            Console.WriteLine($"{SumaCyfr}\n\n");
 
 
 
@@ -198,3 +227,31 @@ namespace zadania_8._4
         }
     }
 }
+
+
+//namespace Projekt_INTEL8086
+//{
+//    internal class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            string[] numbers = { "2", "3", "10", "5", "3", "7" };
+//            int dlugoscTablicy = numbers.Length;
+//            for (int indexOfElement = 0; indexOfElement < dlugoscTablicy; indexOfElement++)
+//            {
+//                int suma;
+//                string ELEMENT = numbers[indexOfElement];
+//                int iloscLiterek = ELEMENT.Length;
+//                for (int indexOfChar = 0; indexOfChar < iloscLiterek; indexOfChar++)
+//                {
+//                    suma
+//                    char LITERKA = ELEMENT[indexOfChar];
+//                    Console.WriteLine("ELEMENT:" + ELEMENT);
+
+//                }
+
+//            }
+
+//        }
+//    }
+//}
