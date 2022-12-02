@@ -100,22 +100,25 @@ namespace zadania_8._4
                 }
                 if (Suma == 1)
                 {
-                    PodzielnePrzezTrzy += i + ", ";              
+                    SumaCyfr[liczbaSumyCyfr] = tablica[i];
+                    liczbaSumyCyfr++;
                 }
-                if (i >= 4 && i <15)
+                if (tablica[i] % 2 == 0)
                 {
                     DodanieSto[liczbaSto] = tablica[i] + 100;
                     liczbaSto++;
                 }
-            }
-            Console.WriteLine("Liczby parzyste:");
-            Console.WriteLine(Parzyste);
-            Console.WriteLine("Liczby nieparzyste:");
-            Console.WriteLine(NieParzyste);
-            Console.WriteLine("Liczby, które dzielą się przez 3");
-            Console.WriteLine(PodzielnePrzezTrzy);
-            Console.WriteLine("Liczby z przedziału [4;15)");
-            Console.WriteLine(Przedzial);
+                if (tablica[i] < 0)
+                {
+                    tablica[i] = 0;
+                    Ujemne[liczbaUjemne] = tablica[i];
+                    liczbaUjemne++;
+                }
+                else
+                {
+                    Ujemne[liczbaUjemne] = tablica[i];
+                    liczbaUjemne++;
+                }
 
 
             }
@@ -177,3 +180,5 @@ namespace zadania_8._4
         }
     }
 }
+
+
